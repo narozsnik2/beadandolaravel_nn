@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class HasznaltSeeder extends Seeder
 {
@@ -15,15 +16,14 @@ class HasznaltSeeder extends Seeder
         $file = database_path('seeders/txt/hasznalt.txt');
         $lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
-        foreach ($lines as $line) {
-            [$mennyiseg, $egyseg, $etelNev, $hozzavaloNev] = explode('|', $line);
+        foreach ($lines as $index => $line) {
+            if ($index === 0) continue; // ha van fejléc, egyébként elhagyható
 
-            $etelid = DB::table('etel')->where('nev', $etelNev)->value('id');
-            $hozzavaloid = DB::table('hozzavalo')->where('nev', $hozzavaloNev)->value('id');
+            [$mennyiseg, $egyseg, $etelid, $hozzavaloid] = explode(';', $line);
 
             DB::table('hasznalt')->insert([
-                'mennyiseg' => $mennyiseg,
-                'egyseg' => $egyseg,
+                'mennyiseg' => $mennyiseg ?: null,
+                'egyseg' => $egyseg ?: null,
                 'etelid' => $etelid,
                 'hozzavaloid' => $hozzavaloid,
                 'created_at' => now(),

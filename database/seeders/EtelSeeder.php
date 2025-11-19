@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class EtelSeeder extends Seeder
 {
@@ -15,19 +16,23 @@ class EtelSeeder extends Seeder
         $file = database_path('seeders/txt/etel.txt');
         $lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
-        foreach ($lines as $line) {
-            [$nev, $kategoriaNev, $felirDatum, $elsoDatum] = explode('|', $line);
+        foreach ($lines as $index => $line) {
+            if ($index === 0) continue; 
 
-            $kategoriaid = DB::table('kategoria')->where('nev', $kategoriaNev)->value('id');
+            [$nev, $id, $kategoriaid, $felirDatum, $elsoDatum] = explode(';', $line);
 
-            DB::table('etel')->insert([
-                'nev' => $nev,
-                'kategoriaid' => $kategoriaid,
-                'felirdatum' => $felirDatum ?: null,
-                'elsodatum' => $elsoDatum ?: null,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
+$felirDatum = $felirDatum ?: null;
+$elsoDatum = $elsoDatum ?: null;
+
+DB::table('etel')->insert([
+    'id' => $id,
+    'nev' => $nev,
+    'kategoriaid' => $kategoriaid,
+    'felirdatum' => $felirDatum,
+    'elsodatum' => $elsoDatum,
+    'created_at' => now(),
+    'updated_at' => now(),
+]);
         }
     }
 }
