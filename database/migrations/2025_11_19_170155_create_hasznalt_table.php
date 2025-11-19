@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('hasznalt', function (Blueprint $table) {
             $table->id();
+            $table->decimal('mennyiseg', 8, 2);
+            $table->string('egyseg');
+            $table->unsignedBigInteger('etelid');
+            $table->unsignedBigInteger('hozzavaloid');
             $table->timestamps();
+    
+            $table->foreign('etelid')->references('id')->on('etel')->onDelete('cascade');
+            $table->foreign('hozzavaloid')->references('id')->on('hozzavalo')->onDelete('cascade');
         });
     }
 

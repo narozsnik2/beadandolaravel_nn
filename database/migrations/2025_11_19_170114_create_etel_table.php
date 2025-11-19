@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('etel', function (Blueprint $table) {
             $table->id();
+            $table->string('nev');
+            $table->unsignedBigInteger('kategoriaid');
+            $table->date('felirdatum')->nullable();
+            $table->date('elsodatum')->nullable();
             $table->timestamps();
+    
+            $table->foreign('kategoriaid')->references('id')->on('kategoria')->onDelete('cascade');
         });
     }
 
