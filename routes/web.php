@@ -9,4 +9,15 @@ Route::get('/', function () {
 
 Route::get('/etelek', [EtelController::class, 'index']);
 
-route::get('/home', [TemplateController::class, 'index']);
+Route::get('/home', [TemplateController::class, 'index'])->name('home');
+
+Route::get('/about', [TemplateController::class, 'about'])->name('about');
+
+Route::get('/receptek', [TemplateController::class, 'receptek'])->name('receptek');
+
+Route::get('/services', [TemplateController::class, 'services'])->name('services');
+
+Route::get('/blog', [TemplateController::class, 'blog'])->name('blog');
+
+Route::get('/contact', [TemplateController::class, 'contact'])->name('contact');
+

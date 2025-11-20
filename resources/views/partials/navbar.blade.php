@@ -11,13 +11,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ url('/') }}">Home</a>
+                        <a class="nav-link" href="{{ url('/home') }}">Főldal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/about') }}">About</a>
+                        <a class="nav-link" href="{{ url('/about') }}">Rólunk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/icecream') }}">Icecream</a>
+                        <a class="nav-link" href="{{ url('/receptek') }}">Receptek</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/services') }}">Services</a>
@@ -26,7 +26,7 @@
                         <a class="nav-link" href="{{ url('/blog') }}">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
+                        <a class="nav-link" href="{{ url('/contact') }}">Kapcsolat</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
