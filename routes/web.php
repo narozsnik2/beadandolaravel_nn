@@ -2,6 +2,7 @@
 use App\Http\Controllers\TemplateController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtelController;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,3 +22,4 @@ Route::get('/blog', [TemplateController::class, 'blog'])->name('blog');
 
 Route::get('/contact', [TemplateController::class, 'contact'])->name('contact');
 
+Route::get('/home', [HomeController::class, 'index']);

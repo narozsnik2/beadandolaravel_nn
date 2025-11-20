@@ -299,9 +299,10 @@ button {
 
 .banner_taital {
     width: 30%;
-    font-size: 60px;
+    font-size: 50px;
     color: #222222;
     font-weight: bold;
+    text-transform: capitalize;
 }
 
 .banner_text {
@@ -309,6 +310,8 @@ button {
     font-size: 16px;
     color: #222222;
     margin: 0px;
+    text-transform: capitalize;
+  
 }
 
 .started_text {
@@ -488,7 +491,7 @@ button {
 .cream_text {
     width: 100%;
     float: left;
-    font-size: 16px;
+    font-size: 25px;
     color: #373736;
     margin: 0px;
 }

@@ -4,97 +4,60 @@
 
 @section('content')
 
+
+use  
+
 <!-- banner section start --> 
 <div class="banner_section layout_padding">
-            <div class="container">
-               <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                  <ol class="carousel-indicators">
-                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">1</li>
-                     <li data-target="#carouselExampleIndicators" data-slide-to="1">2</li>
-                     <li data-target="#carouselExampleIndicators" data-slide-to="2">3</li>
-                     <li data-target="#carouselExampleIndicators" data-slide-to="3">4</li>
-                     <li data-target="#carouselExampleIndicators" data-slide-to="4">5</li>
-                     <li data-target="#carouselExampleIndicators" data-slide-to="5">6</li>
-                     
-                  </ol>
-                  <div class="carousel-inner">
-                     <div class="carousel-item active">
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            
+            
+        <ol class="carousel-indicators">
+    @foreach($randomEtelek as $index => $etel)
+        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $index }}" class="{{ $loop->first ? 'active' : '' }}">
+            {{ $index + 1 }}
+        </li>
+    @endforeach
+        </ol>
+
+            <div class="carousel-inner">
+                @foreach($randomEtelek as $index => $etel)
+                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                         <div class="row">
-                           <div class="col-sm-6">
-                              <h1 class="banner_taital">Köret</h1>
-                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
-                              <div class="started_text"><a href="#">Order Now</a></div>
-                           </div>
-                           <div class="col-sm-6">
-                              <div class="banner_img"><img src="images/banner-img.png"></div>
-                           </div>
+                            <div class="col-sm-6">
+                                <h1 class="banner_taital">{{ $etel->kategoria->nev }}</h1>
+                                <p class="banner_text">{{ $etel->nev }}</p>
+                                <div class="started_text">
+                                    <a href="{{ url('/etel/'.$etel->id) }}">Megnézem</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="banner_img">
+                                @if($etel->kategoria->kep) 
+                                 <img src="{{ asset($etel->kategoria->kep) }}" alt="{{ $etel->kategoria->nev }}">
+                                @else
+                                     <img src="{{ asset('images/no-image.png') }}" alt="Placeholder">
+                                @endif
+                                </div>
+                            </div>
                         </div>
-                     </div>
-                     <div class="carousel-item">
-                        <div class="row">
-                           <div class="col-sm-6">
-                              <h1 class="banner_taital">Leves</h1>
-                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
-                              <div class="started_text"><a href="#">Order Now</a></div>
-                           </div>
-                           <div class="col-sm-6">
-                              <div class="banner_img"><img src="images/banner-img.png"></div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="carousel-item">
-                        <div class="row">
-                           <div class="col-sm-6">
-                              <h1 class="banner_taital">Egytálétel</h1>
-                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
-                              <div class="started_text"><a href="#">Order Now</a></div>
-                           </div>
-                           <div class="col-sm-6">
-                              <div class="banner_img"><img src="images/banner-img.png"></div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="carousel-item">
-                        <div class="row">
-                           <div class="col-sm-6">
-                              <h1 class="banner_taital">Húsétel</h1>
-                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
-                              <div class="started_text"><a href="#">Order Now</a></div>
-                           </div>
-                           <div class="col-sm-6">
-                              <div class="banner_img"><img src="images/banner-img.png"></div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="carousel-item">
-                        <div class="row">
-                           <div class="col-sm-6">
-                              <h1 class="banner_taital">Főzelék</h1>
-                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
-                              <div class="started_text"><a href="#">Order Now</a></div>
-                           </div>
-                           <div class="col-sm-6">
-                              <div class="banner_img"><img src="images/banner-img.png"></div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="carousel-item">
-                        <div class="row">
-                           <div class="col-sm-6">
-                              <h1 class="banner_taital">Tészta</h1>
-                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
-                              <div class="started_text"><a href="#">Order Now</a></div>
-                           </div>
-                           <div class="col-sm-6">
-                              <div class="banner_img"><img src="images/banner-img.png"></div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+                    </div>
+                @endforeach
             </div>
+
+         
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+
+        </div>
+    </div>
 </div>
-        <!-- banner section end -->
+<!-- banner section end -->
 
       <!-- about sectuion start -->
       <div class="about_section layout_padding">

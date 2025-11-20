@@ -9,7 +9,7 @@
             <div class="row">
                <div class="col-md-12">
                   <h1 class="cream_taital">Válogass a receptek közül</h1>
-                  <p class="cream_text">kategória...</p>
+                  <p class="cream_text">Köret</p>
                </div>
             </div>
             <div class="cream_section_2">
@@ -19,7 +19,7 @@
                         <div class="cream_img"><img src="images/img-1.png"></div>
                         <div class="price_text">$10</div>
                         <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <div class="cart_bt"><a href="#">Megnézem</a></div>
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -27,7 +27,7 @@
                         <div class="cream_img"><img src="images/img-2.png"></div>
                         <div class="price_text">$10</div>
                         <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <div class="cart_bt"><a href="#">Megnézem</a></div>
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -35,13 +35,13 @@
                         <div class="cream_img"><img src="images/img-1.png"></div>
                         <div class="price_text">$10</div>
                         <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <div class="cart_bt"><a href="#">Megnézem</a></div>
                      </div>
                   </div>
                </div>
             </div>
           
-            <div class="seemore_bt"><a href="#">See More</a></div>
+            <div class="seemore_bt"><a href="#">Mutass többet</a></div>
          </div>
       </div>
 
@@ -49,7 +49,7 @@
          <div class="container">
             <div class="row">
                <div class="col-md-12">
-               <p class="cream_text">kategória...</p>
+               <p class="cream_text">Leves</p>
                   
                </div>
             </div>
@@ -60,7 +60,7 @@
                         <div class="cream_img"><img src="images/img-1.png"></div>
                         <div class="price_text">$10</div>
                         <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <div class="cart_bt"><a href="#">Megnézem</a></div>
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -68,7 +68,7 @@
                         <div class="cream_img"><img src="images/img-2.png"></div>
                         <div class="price_text">$10</div>
                         <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <div class="cart_bt"><a href="#">Megnézem</a></div>
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -76,13 +76,13 @@
                         <div class="cream_img"><img src="images/img-1.png"></div>
                         <div class="price_text">$10</div>
                         <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <div class="cart_bt"><a href="#">Megnézem</a></div>
                      </div>
                   </div>
                </div>
             </div>
             
-            <div class="seemore_bt"><a href="#">See More</a></div>
+            <div class="seemore_bt"><a href="#">Mutass többet</a></div>
          </div>
       </div>
 
@@ -91,7 +91,7 @@
          <div class="container">
             <div class="row">
                <div class="col-md-12">
-               <p class="cream_text">kategória...</p>
+               <p class="cream_text">Egytálétel</p>
                   
                </div>
             </div>
@@ -102,7 +102,7 @@
                         <div class="cream_img"><img src="images/img-1.png"></div>
                         <div class="price_text">$10</div>
                         <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <div class="cart_bt"><a href="#">Megnézem</a></div>
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -110,7 +110,7 @@
                         <div class="cream_img"><img src="images/img-2.png"></div>
                         <div class="price_text">$10</div>
                         <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <div class="cart_bt"><a href="#">Megnézem</a></div>
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -118,7 +118,7 @@
                         <div class="cream_img"><img src="images/img-1.png"></div>
                         <div class="price_text">$10</div>
                         <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <div class="cart_bt"><a href="#">Megnézem</a></div>
                      </div>
                   </div>
                </div>
@@ -127,14 +127,14 @@
 
 
             
-            <div class="seemore_bt"><a href="#">See More</a></div>
+            <div class="seemore_bt"><a href="#">Mutass többet</a></div>
          </div>
       </div>
       <div class="cream_section layout_padding">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
-               <p class="cream_text">kategória...</p>
+               <p class="cream_text">Húsétel</p>
                   
                </div>
             </div>
@@ -145,7 +145,7 @@
                         <div class="cream_img"><img src="images/img-1.png"></div>
                         <div class="price_text">$10</div>
                         <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <div class="cart_bt"><a href="#">Megnézem</a></div>
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -153,7 +153,7 @@
                         <div class="cream_img"><img src="images/img-2.png"></div>
                         <div class="price_text">$10</div>
                         <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <div class="cart_bt"><a href="#">Megnézem</a></div>
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -161,7 +161,7 @@
                         <div class="cream_img"><img src="images/img-1.png"></div>
                         <div class="price_text">$10</div>
                         <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <div class="cart_bt"><a href="#">Megnézem</a></div>
                      </div>
                   </div>
                </div>
@@ -170,7 +170,7 @@
 
 
             
-            <div class="seemore_bt"><a href="#">See More</a></div>
+            <div class="seemore_bt"><a href="#">Mutass többet</a></div>
          </div>
       </div>
 
@@ -180,7 +180,7 @@
          <div class="container">
             <div class="row">
                <div class="col-md-12">
-               <p class="cream_text">kategória...</p>
+               <p class="cream_text">Főzelék</p>
                   
                </div>
             </div>
@@ -191,7 +191,7 @@
                         <div class="cream_img"><img src="images/img-1.png"></div>
                         <div class="price_text">$10</div>
                         <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <div class="cart_bt"><a href="#">Megnézem</a></div>
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -199,7 +199,7 @@
                         <div class="cream_img"><img src="images/img-2.png"></div>
                         <div class="price_text">$10</div>
                         <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <div class="cart_bt"><a href="#">Megnézem</a></div>
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -207,7 +207,7 @@
                         <div class="cream_img"><img src="images/img-1.png"></div>
                         <div class="price_text">$10</div>
                         <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <div class="cart_bt"><a href="#">Megnézem</a></div>
                      </div>
                   </div>
                </div>
@@ -216,7 +216,7 @@
 
 
             
-            <div class="seemore_bt"><a href="#">See More</a></div>
+            <div class="seemore_bt"><a href="#">Mutass többet</a></div>
          </div>
       </div>
 
@@ -225,7 +225,7 @@
          <div class="container">
             <div class="row">
                <div class="col-md-12">
-               <p class="cream_text">kategória...</p>
+               <p class="cream_text">Tészta</p>
                   
                </div>
             </div>
@@ -236,7 +236,7 @@
                         <div class="cream_img"><img src="images/img-1.png"></div>
                         <div class="price_text">$10</div>
                         <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <div class="cart_bt"><a href="#">Megnézem</a></div>
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -244,7 +244,7 @@
                         <div class="cream_img"><img src="images/img-2.png"></div>
                         <div class="price_text">$10</div>
                         <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <div class="cart_bt"><a href="#">Megnézem</a></div>
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -252,7 +252,7 @@
                         <div class="cream_img"><img src="images/img-1.png"></div>
                         <div class="price_text">$10</div>
                         <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <div class="cart_bt"><a href="#">Megnézem</a></div>
                      </div>
                   </div>
                   
@@ -262,7 +262,7 @@
 
 
             
-            <div class="seemore_bt"><a href="#">See More</a></div>
+            <div class="seemore_bt"><a href="#">Mutass többet</a></div>
          </div>
       </div>
       <!-- cream sectuion end -->
