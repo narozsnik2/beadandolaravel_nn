@@ -41,7 +41,7 @@ use
                            @elseif($etel->kategoria && $etel->kategoria->kep)
                            <img src="{{ asset($etel->kategoria->kep) }}" alt="{{ $etel->kategoria->nev }}">
                             @else
-                            <img src="{{ asset('images/no-image.png') }}" alt="Placeholder">
+                            <img src="{{ asset('images/default_etel.png') }}" alt="Placeholder">
                             @endif
                               </div>
                             </div>

@@ -55,7 +55,29 @@
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
-                     <div class="login_bt"><a href="#">Login <span style="color: #222222;"><i class="fa fa-user" aria-hidden="true"></i></span></a></div>
+                   
+                    @auth
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{ Auth::user()->name }}
+    </a>
+    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+        <a class="dropdown-item" href="{{ route('messages') }}">Üzenetek</a>
+        <a class="dropdown-item" href="{{ route('profile.edit') }}">Profil</a>
+
+        <a class="dropdown-item" href="{{ route('logout') }}"
+           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            Kijelentkezés
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
+    </div>
+</li>
+@endauth
+</div>
+</div>
                      <div class="fa fa-search form-control-feedback"></div>
                   </form>
                 </div>
@@ -77,7 +99,7 @@
 
     
 
-    <script src="js/jquery.min.js"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>
       <script src="js/jquery-3.0.0.min.js"></script>
@@ -86,6 +108,7 @@
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
       <!-- javascript --> 
+      <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
 
 </body>
