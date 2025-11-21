@@ -2,15 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Message;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
     public function index()
     {
-        
-        $messages = auth()->user()->messages ?? [];
-        return view('frontend.messages', compact('messages'));
+        $messages = auth()->user()->receivedMessages()->orderBy('created_at', 'desc')->get();
+        return view('frontend.messages.index', compact('messages'));
+    }
+
+    public function create()
+    {
+       
+        $users = User::where('id', '!=', auth()->id())->get();
+        return view('frontend.messages.create', compact('users'));
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'recipient_id' => 'required|exists:users,id',
+            'content' => 'required|string|max:1000',
+        ]);
+
+        Message::create([
+            'user_id' => auth()->id(),
+            'recipient_id' => $request->recipient_id,
+            'content' => $request->content,
+        ]);
+
+        return redirect()->route('messages.index')->with('success', 'Üzenet elküldve!');
     }
 }

@@ -11,6 +11,8 @@ use App\Http\Controllers\KategoriakController;
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
+use App\Http\Controllers\MessageController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -56,3 +58,10 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
     ->name('logout');
 
 require __DIR__.'/auth.php';
+
+
+Route::middleware('auth')->group(function() {
+    Route::get('/messages', [MessageController::class, 'index'])->name('messages.index');
+    Route::get('/messages/create', [MessageController::class, 'create'])->name('messages.create');
+    Route::post('/messages', [MessageController::class, 'store'])->name('messages.store');
+});

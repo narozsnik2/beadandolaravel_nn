@@ -75,7 +75,7 @@
             @if(Auth::user()->role === 'admin')
         <li><a class="dropdown-item" href="{{ url('/admin') }}">Admin Panel</a></li>
         @endif
-                <li><a class="dropdown-item" href="{{ route('messages') }}">Üzenetek</a></li>
+        <a class="dropdown-item" href="{{ route('messages.index') }}">Üzenetek</a>
                 <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Profil</a></li>
                 
                 <li>
