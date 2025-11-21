@@ -18,9 +18,9 @@ class HomeController extends Controller
             $q->where('nev', $kategoriaNev);
         })->inRandomOrder()->first();
 
-        // Csak ha van étel
+      
         if ($etel) {
-            $randomEtelek[] = $etel; // numerikus kulcs
+            $randomEtelek[] = $etel;
         }
     }
 

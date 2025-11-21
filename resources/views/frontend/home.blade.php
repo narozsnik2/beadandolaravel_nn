@@ -28,18 +28,22 @@ use
                             <div class="col-sm-6">
                                 <h1 class="banner_taital">{{ $etel->kategoria->nev }}</h1>
                                 <p class="banner_text">{{ $etel->nev }}</p>
+                               
+                               
                                 <div class="started_text">
-                                    <a href="{{ url('/etel/'.$etel->id) }}">Megnézem</a>
+                               
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="banner_img">
-                                @if($etel->kategoria->kep) 
-                                 <img src="{{ asset($etel->kategoria->kep) }}" alt="{{ $etel->kategoria->nev }}">
-                                @else
-                                     <img src="{{ asset('images/no-image.png') }}" alt="Placeholder">
-                                @endif
-                                </div>
+                            <div class="banner_img">
+                            @if($etel->kep)
+                           <img src="{{ asset($etel->kep) }}" alt="{{ $etel->nev }}">
+                           @elseif($etel->kategoria && $etel->kategoria->kep)
+                           <img src="{{ asset($etel->kategoria->kep) }}" alt="{{ $etel->kategoria->nev }}">
+                            @else
+                            <img src="{{ asset('images/no-image.png') }}" alt="Placeholder">
+                            @endif
+                              </div>
                             </div>
                         </div>
                     </div>
@@ -55,6 +59,10 @@ use
             </a>
 
         </div>
+        <div class="position-absolute" style="top: 35%; left: 9%;">
+        <a href="{{ url('/receptek/'.$randomEtelek[0]->id) }}" class="bt-megnezem">Megnézem</a>
+    </div>
+
     </div>
 </div>
 <!-- banner section end -->
@@ -69,7 +77,7 @@ use
                <div class="col-md-6">
                   <h1 class="about_taital">Az oldalról</h1>
                   <p class="about_text">Az oldal működésének lényege, hogy a felhasználók együtt tudják gazdagítani ezt a virtuális receptkönyvet.</p>
-                  <div class="read_bt_1"><a href="{{ url ('/about') }}">Read More</a></div>
+                  <div class="read_bt_1"><a href="{{ url ('/about') }}">Tovább olvasom</a></div>
                </div>
             </div>
          </div>
@@ -303,6 +311,8 @@ use
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
       <!-- javascript --> 
+
+
 
 
 @endsection

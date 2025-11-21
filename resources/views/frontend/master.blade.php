@@ -16,7 +16,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="{{ url('/home') }}">
-                    <img src="{{ asset('images/logo.png') }}">
+                    <img src="{{ asset('images/default_etel.png') }}" style="height:50px; width:auto;">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
@@ -29,9 +29,21 @@
                         <li class="nav-item {{ request()->routeIs('about') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ url ('/about') }}">Rólunk</a>
                         </li>
-                        <li class="nav-item {{ request()->routeIs('receptek') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ url ('/receptek') }}">Receptek</a>
-                        </li>
+
+
+                        <li class="nav-item dropdown" id="receptek-dropdown">
+    <a class="nav-link dropdown-toggle" href="{{ url('/receptek') }}" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+        Receptek
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        @foreach($kategoriak as $kategoria)
+            <a class="dropdown-item" href="{{ route('kategoriak.show', $kategoria->id) }}">
+                {{ $kategoria->nev }}
+            </a>
+        @endforeach
+    </div>
+</li>
+
                         <li class="nav-item {{ request()->routeIs('services') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ url ('/services') }}">Services</a>
                         </li>

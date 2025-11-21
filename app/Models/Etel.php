@@ -18,19 +18,24 @@ class Etel extends Model
     }
 
 
-    public function index()
-{
-    
-    $kategoriaRecept = Kategoria::with(['etelek' => function($query) {
-        $query->inRandomOrder()->limit(1);
-    }])->get();
-
-    return view('frontend.home', compact('kategoriaRecept'));
-}
-
+   
 public function kategoria()
 {
     return $this->belongsTo(Kategoria::class, 'kategoriaid', 'id');
 }
+
+
+public function getKepUrlAttribute()
+{
+    if ($this->kep && file_exists(storage_path('app/public/etelek/' . $this->kep))) {
+        return asset('storage/etelek/' . $this->kep);
+    }
+
+    return asset('images/default_etel.png');
+}
+
+
+
+protected $fillable = ['nev', 'kategoriaid', 'kep', ];
 
 }

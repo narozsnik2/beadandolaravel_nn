@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use App\Models\Kategoria;
 
 class TemplateController extends Controller
 {
@@ -19,7 +20,12 @@ public function about()
 
 public function receptek()
 {
-    return view('frontend.receptek');
+  
+    $kategoriak = Kategoria::with(['etelek' => function($query) {
+        $query->inRandomOrder()->limit(3); 
+    }])->get();
+
+    return view('frontend.receptek', compact('kategoriak'));
 }
 
 public function services()
@@ -37,7 +43,6 @@ public function contact()
 {
     return view('frontend.contact');
 }
-
 
 
 }

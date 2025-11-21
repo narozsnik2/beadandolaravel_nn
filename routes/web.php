@@ -3,14 +3,14 @@ use App\Http\Controllers\TemplateController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtelController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KategoriakController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/etelek', [EtelController::class, 'index']);
 
-Route::get('/home', [TemplateController::class, 'index'])->name('home');
+
+
+
+Route::get('/etelek', [EtelController::class, 'etelek'])->name('etelek');
 
 Route::get('/about', [TemplateController::class, 'about'])->name('about');
 
@@ -22,4 +22,9 @@ Route::get('/blog', [TemplateController::class, 'blog'])->name('blog');
 
 Route::get('/contact', [TemplateController::class, 'contact'])->name('contact');
 
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
+Route::get('/receptek/{id}', [EtelController::class, 'show'])->name('etel.megnezem');
+
+Route::get('/kategoriak/{id}', [KategoriakController::class, 'show'])->name('kategoriak.show');

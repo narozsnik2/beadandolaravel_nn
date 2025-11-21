@@ -9,9 +9,9 @@ class Kategoria extends Model
 {
     use HasFactory;
 
-    protected $table = 'kategoria'; // <<< ide kell a helyes tábla neve
+    protected $table = 'kategoria';
 
-    // Ha nincs created_at / updated_at oszlop, tiltsd le
+  
     public $timestamps = false;
 
     public function etelek()
