@@ -56,26 +56,38 @@
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
                    
-                    @auth
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {{ Auth::user()->name }}
-    </a>
-    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-        <a class="dropdown-item" href="{{ route('messages') }}">Üzenetek</a>
-        <a class="dropdown-item" href="{{ route('profile.edit') }}">Profil</a>
+                    <ul class="navbar-nav ms-auto">
+    @guest
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('login') }}">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link btn btn-primary text-white" href="{{ route('register') }}">Regisztráció</a>
+        </li>
+    @endguest
 
-        <a class="dropdown-item" href="{{ route('logout') }}"
-           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            Kijelentkezés
-        </a>
-
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-            @csrf
-        </form>
-    </div>
-</li>
-@endauth
+    @auth
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ Auth::user()->name }}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+            @if(Auth::user()->role === 'admin')
+        <li><a class="dropdown-item" href="{{ url('/admin') }}">Admin Panel</a></li>
+        @endif
+                <li><a class="dropdown-item" href="{{ route('messages') }}">Üzenetek</a></li>
+                <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Profil</a></li>
+                
+                <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="dropdown-item">Kijelentkezés</button>
+                    </form>
+                </li>
+            </ul>
+        </li>
+    @endauth
+</ul>
 </div>
 </div>
                      <div class="fa fa-search form-control-feedback"></div>
