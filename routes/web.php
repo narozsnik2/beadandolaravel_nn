@@ -1,5 +1,5 @@
 <?php
-
+use Inertia\Inertia;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -65,3 +65,8 @@ Route::middleware('auth')->group(function() {
     Route::get('/messages/create', [MessageController::class, 'create'])->name('messages.create');
     Route::post('/messages', [MessageController::class, 'store'])->name('messages.store');
 });
+
+
+Route::get('/logout-page', function () {
+    return Inertia::render('LogoutPage');
+})->name('logout-page');
