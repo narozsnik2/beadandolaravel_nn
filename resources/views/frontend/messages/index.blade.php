@@ -41,6 +41,42 @@
                         </tbody>
                     </table>
                 </div>
+                @if(auth()->user()?->role === 'admin')
+                <div class="table-responsive">
+                    <h3>Adminnak küldött üzenetek</h3>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Feladó</th>
+                                <th>Email</th>
+                                <th>Telefon</th>
+                                <th>Üzenet</th>
+                                <th>Dátum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse($contactMessages as $cmsg)
+                                <tr>
+                                <td>
+                                {{ $cmsg->name }}
+                                 @if($cmsg->user_id)
+                                    <br><small>(Bejelentkezett felhasználó: {{ $cmsg->user?->name }})</small>
+                                     @endif
+                                        </td>
+                                    <td>{{ $cmsg->email }}</td>
+                                    <td>{{ $cmsg->phone }}</td>
+                                    <td>{{ $cmsg->message }}</td>
+                                    <td>{{ $cmsg->created_at->format('Y-m-d H:i') }}</td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="5">Nincsenek üzenetek</td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            @endif
 
             </div>
         </div>

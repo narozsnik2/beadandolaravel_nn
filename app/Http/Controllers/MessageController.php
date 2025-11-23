@@ -5,15 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Message;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\ContactMessage;
 
 class MessageController extends Controller
 {
     public function index()
-    {
-        $messages = auth()->user()->receivedMessages()->orderBy('created_at', 'desc')->get();
-        return view('frontend.messages.index', compact('messages'));
-    }
+{
+    $messages = auth()->user()->receivedMessages()->orderBy('created_at', 'desc')->get();
+    $contactMessages = ContactMessage::with('user')->latest()->get();
 
+    return view('frontend.messages.index', compact('messages', 'contactMessages'));
+}
     public function create()
     {
        

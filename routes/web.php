@@ -13,6 +13,8 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 use App\Http\Controllers\MessageController;
 
+use App\Http\Controllers\ContactController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -65,6 +67,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/messages/create', [MessageController::class, 'create'])->name('messages.create');
     Route::post('/messages', [MessageController::class, 'store'])->name('messages.store');
 
+    
     Route::get('/etelek/create', [EtelController::class, 'create'])->name('etelek.create');
     Route::post('/etelek/store', [EtelController::class, 'storeNew'])->name('etelek.storeNew');
     Route::get('/etelek/sajat', [EtelController::class, 'sajatReceptjeim'])->name('etelek.sajat');
@@ -76,3 +79,6 @@ Route::middleware('auth')->group(function() {
 Route::get('/logout-page', function () {
     return Inertia::render('LogoutPage');
 })->name('logout-page');
+
+
+Route::post('/contact', [ContactController::class, 'store'])->name('kapcsolat.send');

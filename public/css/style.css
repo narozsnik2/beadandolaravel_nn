@@ -897,7 +897,7 @@ button {
     background-color: transparent !important;
     border-bottom: 1px solid #6d6d6d !important;
     border: 0px;
-    text-transform: uppercase;
+  
 }
 
 input.email-bt::placeholder {
@@ -913,7 +913,7 @@ input.email-bt::placeholder {
     background-color: transparent !important;
     border-bottom: 1px solid #6d6d6d !important;
     border: 0px;
-    text-transform: uppercase;
+   
 }
 
 textarea#comment::placeholder {
@@ -1054,7 +1054,7 @@ textarea#comment::placeholder {
     display: block;
     margin-top: 10px;
     border: 0px;
-    text-transform: uppercase;
+ 
 }
 
 textarea#comment.update_mail::placeholder {
