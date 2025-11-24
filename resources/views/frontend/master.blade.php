@@ -50,7 +50,9 @@
                             <a class="nav-link" href="{{ url ('/contact') }}">Kapcsolat</a>
                         </li>
 
-                       
+                        <li class="nav-item">
+    <a class="nav-link" href="{{ route('kereses') }}">🔍</a>
+</li>
                         @auth
     <li class="nav-item">
         <a class="nav-link {{ request()->routeIs('etelek.create') ? 'active' : '' }}" href="{{ route('etelek.create') }}">Új recept feltöltése</a>
@@ -58,6 +60,9 @@
     <li class="nav-item">
         <a class="nav-link {{ request()->routeIs('etelek.sajat') ? 'active' : '' }}" href="{{ route('etelek.sajat') }}">Saját receptjeim</a>
     </li>
+
+
+    
 @endauth
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
@@ -72,9 +77,7 @@
         </li>
     @endguest
     
-<li class="nav-item">
-    <a class="nav-link" href="{{ route('kereses') }}">🔍</a>
-</li>
+
 
 
     @auth

@@ -11,8 +11,8 @@ class MessageController extends Controller
 {
     public function index()
 {
-    $messages = auth()->user()->messages()->latest()->paginate(6);
-    $contactMessages = ContactMessage::latest()   ->paginate(6, ['*'], 'admin_page');
+    $messages = auth()->user()  ->receivedMessages() ->with('user')->latest()->orderBy('created_at', 'desc')->paginate(6);
+    $contactMessages = ContactMessage::latest()->orderBy('created_at', 'desc')   ->paginate(6, ['*'], 'admin_page');
 
     return view('frontend.messages.index', compact('messages', 'contactMessages'));
 }
