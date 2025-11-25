@@ -457,34 +457,29 @@ button {
 }
 
 .bt-megnezem {
-    display: inline-block;        
-            
-    min-width: 120px;            
+    width: 150%;
+    float: left;
     font-size: 16px;
     text-align: center;
     background-color: #fc95c4;
-    color: #fff;
-    padding: 10px 20px;
+    color: #ffffff;
+    padding: 10px 0px;
     border-radius: 5px;
     font-weight: bold;
-    text-decoration: none;
-    transition: all 0.3s ease; 
-    pointer-events: auto;
-    text-align: center;
 }
 
 
 
 .bt-megnezem:hover {
     width: 120%;
-  
+    float: left;
     font-size: 16px;
-   
+    text-align: center;
     background-color: #000000;
     color: #ffffff;
-
-   
-   
+    padding: 10px 0px;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 .bt-wrapper {

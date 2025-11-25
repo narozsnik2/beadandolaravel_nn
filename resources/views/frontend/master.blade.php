@@ -112,7 +112,14 @@
 
                             <a class="dropdown-item" href="{{ route('messages.index') }}">Üzenetek</a>
                             <a class="dropdown-item" href="{{ route('profile.edit') }}">Profil</a>
-                            <a class="dropdown-item" href="{{ route('logout-page') }}">Kijelentkezés</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+    @csrf
+</form>
+
+<a class="dropdown-item" href="#" 
+   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+    Kijelentkezés
+</a>
                         </div>
                     </li>
                 @endauth

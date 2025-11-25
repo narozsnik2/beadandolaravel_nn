@@ -93,3 +93,6 @@ Route::post('/contact', [ContactController::class, 'store'])->name('kapcsolat.se
 
 Route::get('/messages/sent', [MessageController::class, 'sent'])->name('messages.sent');
 Route::get('/kereses', [KeresesController::class, 'index'])->name('kereses');
+
+
+Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
